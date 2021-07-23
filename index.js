@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const goals = document.getElementById('completed-goals');
-
+const form = document.getElementById("completed-goals");
 
 app.use(cors());
 
@@ -89,7 +88,7 @@ let completedGoals =['walk the dog', 'exercise', 'make breakfast']
 function displayCompletedGoals(){
   sendStatus(200).send(completedGoals)
 }
-goals.addEventListener('click', displayCompletedGoals)
+ form.addEventListener('click', displayCompletedGoals)
 
 // let goals =[]
 
