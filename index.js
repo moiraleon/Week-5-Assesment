@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-// const form = document.getElementById('submit')
+const goals = document.getElementById('completed-goals');
 
 
 app.use(cors());
@@ -89,21 +89,21 @@ let completedGoals =['walk the dog', 'exercise', 'make breakfast']
 function displayCompletedGoals(){
   sendStatus(200).send(completedGoals)
 }
-complete-goals.addEventListener('click', displayCompletedGoals)
+goals.addEventListener('click', displayCompletedGoals)
 
-let goals =[]
+// let goals =[]
 
-let studyTools =[]
-module.exports = {
-  createGoal:(req,res)=>{
-  const {title, content} = req.body
-  goals.push(req.body)
-  res.status(200).send('Goal added to task list')
-  console.log(goals)
-}
+// let studyTools =[]
+// module.exports = {
+//   createGoal:(req,res)=>{
+//   const {title, content} = req.body
+//   goals.push(req.body)
+//   res.status(200).send('Goal added to task list')
+//   console.log(goals)
+// }
 
  
-},
+// },
 
 
 
