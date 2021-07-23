@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const form = document.getElementById("completed-goals");
+// const form = document.getElementById("completed-goals");
 
 app.use(cors());
 
@@ -71,24 +71,24 @@ app.get("/api/screen-saver", (req, res) => {
 
 // let goals =[{title:'Study',content:'study 30 mminutes each day'}, ]
 
-app.get("/api/suggested-tools", (req, res) => {
-  const suggestedTools = ["Join a Study Group",
-					 "Work with a Mentor",
-					 "Find a Study Budy",
-  ]
+// app.get("/api/suggested-tools", (req, res) => {
+//   const suggestedTools = ["Join a Study Group",
+// 					 "Work with a Mentor",
+// 					 "Find a Study Budy",
+//   ]
 
-  let randomIndex = Math.floor(Math.random() * suggestedTools.length);
-  let randomSuggestedTools = suggestedTools[randomIndex];
+//   let randomIndex = Math.floor(Math.random() * suggestedTools.length);
+//   let randomSuggestedTools = suggestedTools[randomIndex];
 
-  res.status(200).send(randomSuggestedTools);
+//   res.status(200).send(randomSuggestedTools);
   
-});
+// });
 
-let completedGoals =['walk the dog', 'exercise', 'make breakfast']
-function displayCompletedGoals(){
-  sendStatus(200).send(completedGoals)
-}
- form.addEventListener('click', displayCompletedGoals)
+// let completedGoals =['walk the dog', 'exercise', 'make breakfast']
+// function displayCompletedGoals(){
+//   sendStatus(200).send(completedGoals)
+// }
+//  form.addEventListener('click', displayCompletedGoals)
 
 // let goals =[]
 
