@@ -1,7 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+// const baseURL = 'http://localhost:4004/api/'
+
 // const form = document.getElementById("completed-goals");
+// const form = document.getElementById('goalForm')
+const createGoal = body => axios.post(baseURL, body).then(goalsCallback).catch(errCallback)
 
 app.use(cors());
 
@@ -61,6 +65,59 @@ app.get("/api/screen-saver", (req, res) => {
   
   
 });
+
+let goals = []
+
+app.post('/api/goals',(req,res) =>{
+  let {title, content}= req.body
+  // console.log(req.body)
+  
+  if(!title|| !content){
+    res.status(400).send('Please enter a valid goal')
+  }else{
+    goals.push(req.body)
+    res.status(200).send('Goal successfully created')
+  }
+})
+
+
+
+
+
+
+
+
+
+// function submitHandler(e) {
+//   e.preventDefault()
+
+//   let title = document.querySelector('#title')
+//   let content = document.querySelector('#content')
+
+
+//   // let goalObj = {
+//   //     title: title.value,
+//   //     content: content.value, 
+  
+//   // }
+
+//   createGoal(goalObj)
+
+//   title.value = ''
+//   content.value = ''
+
+
+// app.post('/api/goals', (req,res)=>{
+//   let {title, content} =req.body
+//   goals.push(req.body)
+//   res.status(200).send(goals)
+
+  
+// })
+// }
+
+
+// form.addEventListener('submit', submitHandler)
 
 // form.addEventListener('submit',(req,res)=>{
 //   res.status(200).send(form)
