@@ -65,7 +65,18 @@
   <label for="content">Desired Outcome:</label><br>
   <input type="text" id="content" name="content"> <br>
   <button id="newGoalSubmit">Add Goal</button>
+  <script> document.getElementById("newGoalSubmit").onclick = function () {
+    let title = document.getElementById("title").value
+    let content = document.getElementById('content').value
+    axios.post("http://localhost:4000/api/new-goal/", {title, content} )
+        .then(function (response) {
+          const data = response.data;
+          alert(data);
+        }).catch(err => console.log(`Goal Form: ${err}`))
+      }
+  </script>
 </form>
+
 <br>
 <br>
 <form name="studyTools" method="GET" action="http://localhost:4000/api/study-tools/">
@@ -96,7 +107,7 @@
   </form>
 <br>
 <br>
-  <a class="image-link" href="https://i.redd.it/t1trwftn8t611.jpg">View Todays Recommended Screen Saver Image</a>
+  <button><a class="image-link" href="https://i.redd.it/t1trwftn8t611.jpg">View Todays Recommended Screen Saver Image</a></button>
   
 
   </body>

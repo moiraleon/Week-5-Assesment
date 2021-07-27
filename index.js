@@ -68,21 +68,25 @@ app.get("/api/screen-saver", (req, res) => {
 
 let goals = []
 
-let goal={
-  title:'',
-  content:''
-}
+// let body={
+//   title.value,
+//   content.value
+// }
 
-app.post('/api/goals',(req,res) =>{
+app.post('/api/new-goal/',(req,res) =>{
   // let title = req.body.title
-  // let content= req.body.content
+  
   let {title, content}= req.body
   console.log(req.body)
 
   if(!title|| !content){
     res.status(400).send('Please enter a valid goal')
   }else{
-    goals.push(req.body)
+    let goal={
+      title,
+      content
+    }
+    goals.push(goal)
     res.status(200).send('Goal successfully created')
   }
 })
